@@ -70,6 +70,7 @@ abline(h = -log10(0.01), col = "grey", lty = 2)
 <img width="702" height="437" alt="Screenshot 2025-09-08 015338" src="https://github.com/user-attachments/assets/01d65c30-cf79-454e-b70a-5b53cebec1e1" />
 
 The volcano plot shows the distribution of genes based on their log2 fold change (x-axis) and statistical significance (-log10 p-value, y-axis). Genes on the right side (red dots) represent upregulated genes in the treated diseased cells (compound X vs untreated); Genes on the left side (blue dots) represent downregulated genes after treatment; Grey dots represent genes with no significant differential expression.
+
  **Interpretation**: Compound X treatment induces both upregulation and downregulation of multiple genes, suggesting it influences disease-related molecular pathways.
 
 
@@ -89,12 +90,13 @@ print(up_reg)
 
 #### Top 5 Downregulated Genes
 ```r
-up_reg <- rna_seq %>%
-  filter(diffexpressed == "UP") %>%
-  arrange(desc(log2FoldChange)) %>%
+down_genes <- rna_seq %>%
+  filter(diffexpressed == "DOWN") %>%
+  arrange(log2FoldChange) %>%
   head(5) %>%
-   select(Gene, log2FoldChange, pvalue) 
-print(up_reg)
+  select(Gene, log2FoldChange, pvalue)
+
+print(down_genes)
 ```
 
 <img width="1267" height="221" alt="Screenshot 2025-09-08 015450" src="https://github.com/user-attachments/assets/d3630212-3fbb-4a18-a8a6-aff9f40dbff8" />
