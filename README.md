@@ -28,6 +28,14 @@ row(rna_seq)
 head(rna_seq)
 ```
 
+#### Convert Dataset to Excel
+```python
+import pandas as pd
+url = "https://gist.githubusercontent.com/stephenturner/806e31fce55a8b7175af/raw/1a507c4c3f9f1baaa3a69187223ff3d3050628d4/results.txt"
+df = pd.read_csv(url, delim_whitespace=True)
+df.to_excel("dumbseq_dataset.xlsx", index=False)
+```
+
 #### Volcano Plot
 ```r
 rna_seq$negLogP <- -log10(rna_seq$pvalue)
