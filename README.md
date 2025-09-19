@@ -92,8 +92,13 @@ up_reg <- rna_seq %>%
 print(up_reg)
 ```
 
-<img width="1265" height="216" alt="Screenshot 2025-09-08 015405" src="https://github.com/user-attachments/assets/d125019d-41f2-4610-9d8e-f60a8c0896d6" />
-
+|Gene|log2FoldChange|pvalue|
+|----|--------------|------|
+|DTHD1|1.540|5.594e-05|
+|EMILIN2|1.534|2.976e-06|
+|PI16|1.495|1.297e-04|
+|C4orf45|1.288|2.472e-04|
+|FAM180B|1.249|1.146e-03|
 
 
 #### Top 5 Downregulated Genes
@@ -107,7 +112,13 @@ down_genes <- rna_seq %>%
 print(down_genes)
 ```
 
-<img width="1267" height="221" alt="Screenshot 2025-09-08 015450" src="https://github.com/user-attachments/assets/d3630212-3fbb-4a18-a8a6-aff9f40dbff8" />
+|Gene|log2FoldChange|pvalue|
+|----|--------------|------|
+|TBX5|-2.129|5.655e-08|
+|IFITM1|-1.687|3.735e-06|
+|TNN|-1.658|8.973e-06|
+|COL13A1|-1.647|1.394e-05|
+|IFITM3|-1.610|1.202e-05|
 
 ### Summary of Analysis
 The analysis revealed distinct sets of genes upregulated and downregulated upon Compound X treatment. Upregulated genes (e.g., DTHD1, EMILIN2) suggest enhanced apoptosis and matrix remodeling, while downregulated genes (e.g., TBX5, IFITM1) indicate suppression of immune-related and developmental transcriptional programs. These findings highlight potential molecular mechanisms by which Compound X exerts its therapeutic effects.
